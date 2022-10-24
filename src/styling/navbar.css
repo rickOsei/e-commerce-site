@@ -1,0 +1,392 @@
+/*
+=============== 
+Main
+===============
+*/
+
+.container {
+  display: grid;
+  width: 100vw;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    display: grid;
+    justify-content: center;
+    width: 100vw;
+    background: #fff;
+    padding-bottom: 20px;
+  }
+
+  .nav_an {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  .space {
+    width: 100vw;
+    height: 155px;
+  }
+}
+
+/*
+=============== 
+Main
+===============
+*/
+
+/*
+=============== 
+Navbar & annoucement
+===============
+*/
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+}
+
+/************************************ media queries *******************************************/
+@media screen and (min-width: 992px) {
+  .navbar {
+    width: 95vw;
+  }
+}
+/************************************ media queries End*******************************************/
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.center img {
+  width: 140px;
+  height: 27px;
+}
+
+/************************************ media queries *******************************************/
+@media screen and (min-width: 992px) {
+  .center img {
+    width: 180px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .center img {
+    width: 120px;
+    height: 23px;
+  }
+  #favorite,
+  #search {
+    display: none;
+  }
+}
+/************************************ media queries End*******************************************/
+
+.left {
+  display: none;
+}
+
+.bars_search {
+  flex: 1;
+}
+
+.right {
+  display: none;
+}
+
+.favorite_bag {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart_amount {
+  border: none;
+  border-radius: 50%;
+  background: black;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  padding: 1px 5px;
+  position: absolute;
+  right: 0.8rem;
+  top: 10px;
+}
+
+/************************************ media queries *******************************************/
+@media screen and (min-width: 992px) {
+  .bars_search {
+    display: none;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .right p {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .favorite_bag {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 480px) {
+  .left {
+    display: block;
+    position: absolute;
+    top: 3rem;
+    left: 1.3rem;
+  }
+
+  .nav_btn {
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--clr-grey-4);
+  }
+}
+/************************************ media queries End*******************************************/
+
+.low_navbar {
+  display: none;
+}
+
+/************************************ media queries *******************************************/
+@media screen and (min-width: 992px) {
+  .low_navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .nav_btn {
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .link_btn {
+    flex: 3;
+    display: flex;
+  }
+
+  .input_sec {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .input_sec input {
+    height: 30px;
+    width: 250px;
+    padding: 7px;
+    outline: none;
+    margin-left: 100px;
+  }
+
+  ::placeholder {
+    color: var(--clr-grey-7);
+    font-weight: 300;
+  }
+
+  .search_btn {
+    background: black;
+    height: 30px;
+    width: 50px;
+
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 992px) {
+  .input_sec input {
+    height: 30px;
+    width: 150px;
+    padding: 7px;
+    outline: none;
+    margin-left: 100px;
+  }
+}
+/************************************ media queries End*******************************************/
+
+.cont_annoucement {
+  display: none;
+}
+
+.annouce_mini {
+  display: flex;
+  background: #000;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.annouce_btn {
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 8px;
+  font-size: 11.5px;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+.help,
+.track,
+.account {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/************************************ media queries *******************************************/
+@media screen and (max-width: 410px) {
+  .annouce_btn {
+    font-size: 10px;
+    padding: 0.3rem;
+  }
+}
+/************************************ media queries End*******************************************/
+
+.border {
+  border: 2px solid;
+  border-color: transparent rgb(200, 200, 200) transparent rgb(200, 200, 200);
+}
+
+/************************************ media queries *******************************************/
+@media screen and (min-width: 700px) {
+  .cont_annoucement {
+    display: flex;
+    justify-content: space-between;
+    background: #000;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .annouce_mini {
+    display: none;
+  }
+
+  .annouce_btn {
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 13.5px;
+    cursor: pointer;
+  }
+
+  .annouce_btn:hover {
+    border-bottom: 0.5px solid white;
+  }
+}
+/************************************ media queries End*******************************************/
+
+.leftee {
+  margin-left: 30px;
+}
+
+.toggle_bar {
+  position: absolute;
+  left: 0;
+  background: #ffffff;
+  width: 200px;
+  transition: all 0.7s ease-in-out;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.26);
+  z-index: 1;
+}
+
+.toggle_sec {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 50px;
+}
+
+.toggle_btn {
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.toggle_cancel_btn {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: red;
+}
+
+.toggle_search {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+}
+
+.toggle_top {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle_top_btn {
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.toggle_login {
+  padding: 10px 25px;
+}
+
+/************************************ media queries *******************************************/
+
+@media screen and (max-width: 991px) and (min-width: 480px) {
+  .toggle_top {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .toggle_bar {
+    display: none;
+  }
+}
+/************************************ media queries End*******************************************/
+
+/*
+=============== 
+Navbar & annoucement
+===============
+*/
