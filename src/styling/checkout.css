@@ -1,0 +1,118 @@
+/*
+=============== 
+Checkout
+===============
+*/
+.checkout_container {
+  width: 80vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: grid;
+  justify-content: center;
+}
+
+@media screen and (min-width: 681px) {
+  .checkout_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+}
+
+.form_section {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+@media screen and (min-width: 681px) {
+  .form_section {
+    width: 40vw;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .form_section {
+      width: 40vw;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form_title {
+  margin-bottom: 25px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+::placeholder {
+  color: rgb(165, 165, 165);
+}
+
+.checkout_card {
+  width: 80vw;
+  height: 300px;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.842);
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 681px) {
+  .checkout_card {
+    width: 40vw;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .checkout_card {
+      width: 25vw;
+    }
+  }
+}
+.card_item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.item_description {
+  font-size: 14px;
+  color: white;
+}
+
+.item_amount {
+  font-size: 14px;
+  color: white;
+}
+
+.cost {
+  border-top: 1px solid white;
+  padding: 15px 0;
+}
+
+.cost p {
+  font-size: 18px;
+}
+
+.checkout_btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/*
+=============== 
+Checkout
+===============
+*/

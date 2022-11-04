@@ -135,7 +135,10 @@ function Navbar({ search, setSearch }) {
                 <BsBag style={style.bag} className="leftee" />
               </Link>
             </div>
-            <p className="cart_amount">{amount}</p>
+            <Link to="/cart">
+              <p className="cart_amount">{amount}</p>
+            </Link>
+
             <div className="favorite_bag">
               <Link to="/favorite">
                 <BsHeart style={style.like} id="favorite" />

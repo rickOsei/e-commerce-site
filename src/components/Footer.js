@@ -59,7 +59,6 @@ function Footer() {
           </div>
 
           <div className="dropdown_sec">
-            {" "}
             <div
               className="dropdown"
               onClick={() => setShowLink(showLink === false ? true : false)}

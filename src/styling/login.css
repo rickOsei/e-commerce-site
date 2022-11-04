@@ -1,0 +1,85 @@
+/*
+=============== 
+Login
+===============
+*/
+.login_container {
+  width: 90vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .login_container {
+    width: 60vw;
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 1025px) {
+    .login_container {
+      width: 40vw;
+    }
+  }
+}
+
+.login_title {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login_form {
+  background: rgba(0, 0, 0, 0.842);
+  padding: 45px;
+  width: 100%;
+  height: 320px;
+}
+
+.signup_form {
+  background: rgba(0, 0, 0, 0.842);
+  padding: 45px;
+  width: 100%;
+  height: 450px;
+}
+
+.login_btn {
+  width: 75px;
+  padding: 10px 5px;
+  text-transform: capitalize;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.signup_btn {
+  width: 180px;
+  padding: 10px 5px;
+  text-transform: capitalize;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.create_account {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.617);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.create_account span {
+  color: rgba(255, 255, 255, 0.934);
+}
+
+input[type="file"] {
+  color: white;
+  cursor: pointer;
+}
+
+/*
+=============== 
+Login
+===============
+*/

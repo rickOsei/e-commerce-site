@@ -81,6 +81,7 @@ Slider
 }
 
 .slider_sec_mini {
+  overflow: hidden;
   display: flex;
   margin-top: 25px;
   width: 100vw;
@@ -119,7 +120,6 @@ Slider
   left: 0;
   border-right: 2px solid white;
   padding: 10px 80px;
-  /* color: #fff7e9; */
 }
 
 .slider_image_mini {
@@ -262,7 +262,6 @@ Slider
     position: absolute;
     top: 0;
     left: 0;
-    /* border: 2px solid white; */
     padding: 10px 80px;
   }
 
@@ -335,6 +334,7 @@ Slider
   .slider_sec {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .sliders {
@@ -354,8 +354,6 @@ Slider
     width: 100vw;
     height: 100%;
     padding: 10px 250px 50px 250px;
-
-    /* opacity: 0; */
     transition: var(--transition);
 
     display: flex;

@@ -19,15 +19,14 @@ Footer
   justify-content: center;
 }
 
-.email {
-  color: white;
-  font-size: 50px;
-  position: relative;
-  top: 35px;
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .signup input {
-  width: 250px;
+  width: 100%;
   height: 35px;
   padding: 5px;
   margin: 30px 0 10px 0;
@@ -109,7 +108,7 @@ Footer
 
 /************************************* min-width: 900px ******************************/
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .footer_mini {
     display: none;
   }
@@ -134,6 +133,10 @@ Footer
     font-size: 85px;
     position: relative;
     top: 35px;
+  }
+
+  .signup {
+    display: block;
   }
 
   .signup input {
@@ -175,6 +178,7 @@ Footer
   .extra_info {
     width: 90vw;
     display: flex;
+    justify-content: flex-end;
     padding: 15px;
     border-right: 0.5px solid rgba(255, 255, 255, 0.598);
   }
@@ -223,10 +227,32 @@ Footer
     color: gray;
     margin-right: 10px;
   }
+
+  @media screen and (min-width: 1440px) {
+    li {
+      font-size: 13px;
+    }
+
+    .extra_info_sec {
+      padding: 20px 350px;
+    }
+
+    .extra_info {
+      width: 40vw;
+    }
+
+    .extra_info_list {
+      margin-right: 50px;
+    }
+
+    .extra_info_list h1 {
+      font-size: 14px;
+    }
+  }
 }
 
 /****************************************** min-width: 1440px *****************************************/
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .footer_mini {
     display: none;
   }
@@ -340,10 +366,11 @@ Footer
     color: gray;
     margin-right: 10px;
   }
-}
+} */
 
 /*
 =============== 
 Footer
 ===============
+
 */
