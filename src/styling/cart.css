@@ -38,7 +38,17 @@ Cart
   padding: 2.5rem 0;
   max-width: var(--fixed-width);
 }
-.cart h2 {
+
+.cart_empty {
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 2.5rem 0;
+  max-width: var(--fixed-width);
+}
+
+.cart h2,
+.cart_empty h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 3rem;
@@ -73,8 +83,21 @@ Cart
   border: 1px solid var(--clr-red-dark);
   margin-top: 2.25rem;
   border-radius: var(--radius);
+  cursor: pointer;
 }
-.clear-btn:hover {
+
+.checkout-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: var(--clr-red-dark);
+  border: 1px solid var(--clr-red-dark);
+  margin-top: 2.25rem;
+  margin-left: 5px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.clear-btn:hover,
+.checkout-btn:hover {
   background: var(--clr-red-light);
   color: var(--clr-red-dark);
   border-color: var(--clr-red-light);

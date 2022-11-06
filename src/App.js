@@ -7,6 +7,7 @@ import SinglewinterProduct from "./pages/SingleWinterProduct";
 import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleWinterProduct from "./pages/SingleWinterProduct";
 import Cart from "./features/cart/Cart";
@@ -32,7 +33,14 @@ function App() {
         <Route path="/winterproduct/:id" element={<SingleWinterProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorite" element={<Favorite />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

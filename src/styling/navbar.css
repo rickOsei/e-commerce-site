@@ -22,11 +22,12 @@ Main
     position: fixed;
     top: 0;
     z-index: 1;
+    border-bottom: 0.5px solid rgba(94, 94, 94, 0.257);
   }
 
   .space {
     width: 100vw;
-    height: 155px;
+    height: 200px;
   }
 }
 
@@ -93,6 +94,7 @@ Navbar & annoucement
 
 .bars_search {
   flex: 1;
+  cursor: pointer;
 }
 
 .right {
@@ -305,9 +307,38 @@ Navbar & annoucement
     cursor: pointer;
   }
 
-  .annouce_btn:hover {
-    border-bottom: 0.5px solid white;
+  .profile_pic {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
   }
+
+  .auth_btn {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .auth_page {
+    position: absolute;
+    right: 0;
+    display: flex;
+
+    width: 120px;
+    background: rgba(0, 0, 0, 0.731);
+    padding: 15px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .auth_icon {
+    color: white;
+    margin-right: 5px;
+  }
+
+  /*.annouce_btn:hover {
+     border-bottom: 0.5px solid white;
+  } */
 }
 /************************************ media queries End*******************************************/
 
@@ -344,12 +375,25 @@ Navbar & annoucement
   right: 10px;
   top: 12px;
   color: red;
+  cursor: pointer;
 }
 
 .toggle_search {
   position: absolute;
   left: 10px;
   top: 12px;
+  cursor: pointer;
+  transition: left 0.7s linear;
+}
+
+.toggle_input {
+  width: 70%;
+  height: 4px;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  left: -70%;
+  transition: left 0.7s linear;
 }
 
 .toggle_top {

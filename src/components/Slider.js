@@ -62,11 +62,13 @@ function Slider() {
                 style={{ background: `#${bg}` }}
                 className={position}
               >
-                <div className="overlay">
-                  <h1 className="promo_title_mini">{title}</h1>
-                  <p className="promo_desc_mini">{desc}</p>
-                  {/* <button className="promo_btn_mini">show now</button> */}
-                </div>
+                <Link to="/winter">
+                  <div className="overlay">
+                    <h1 className="promo_title_mini">{title}</h1>
+                    <p className="promo_desc_mini">{desc}</p>
+                  </div>
+                </Link>
+
                 <img src={img} alt="slider" className="slider_image_mini" />
               </article>
             );
@@ -117,8 +119,6 @@ function Slider() {
           })}
 
           <div className="container_dots">
-            {/* {Array.from({ length: 4 }).map((item, buttonIndex) => { */}
-
             {sliderItems.map((item, buttonIndex) => {
               return (
                 <div key={buttonIndex}>

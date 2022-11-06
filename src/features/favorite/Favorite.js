@@ -10,7 +10,7 @@ const Favorite = () => {
 
   if (favorite.length === 0) {
     return (
-      <section className="favorite">
+      <section className="favorite_empty">
         <header>
           <h2>your list</h2>
           <h4 className="empty-favorite">is currently empty</h4>

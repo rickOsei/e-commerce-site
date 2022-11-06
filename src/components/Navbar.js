@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Annoucement from "./Annoucement";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/config";
 import { useSelector, useDispatch } from "react-redux";
+import useAuth from "./useAuth";
 
 // Icons
 import { BsSearch, BsHeart, BsBag } from "react-icons/bs";
@@ -31,11 +34,29 @@ const style = {
 // Styles
 
 function Navbar({ search, setSearch }) {
-  // const [search, setSearch] = useState("");
-
   const [show, setShow] = useState(false);
+  const [showInput, setShowInput] = useState(false);
 
   const { amount } = useSelector((state) => state.cart);
+
+  const { currentUser } = useAuth();
+
+  const logout = async () => {
+    try {
+      const signout = await signOut(auth);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleInputClick = () => {
+    setShowInput(showInput === false ? true : false);
+
+    if (showInput) {
+      setShow(false);
+      setSearch("");
+    }
+  };
 
   return (
     <>
@@ -44,7 +65,20 @@ function Navbar({ search, setSearch }) {
         <section className="container">
           {/**************************************** SideBar Starts *************************************************************/}
           <div className="toggle_bar" style={{ left: !show && "-270%" }}>
-            <IoIosSearch className="toggle_search" />
+            <input
+              type="text"
+              style={{ left: showInput && "10px" }}
+              className="toggle_input"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+            <IoIosSearch
+              className="toggle_search"
+              onClick={handleInputClick}
+              style={{ left: showInput && "150px" }}
+            />
             <AiOutlineClose
               className="toggle_cancel_btn"
               onClick={() => {
@@ -93,9 +127,17 @@ function Navbar({ search, setSearch }) {
             </div>
             <hr />
             <div className="toggle_login">
-              <a href="#*">
-                <button className=" toggle_btn">login</button>
-              </a>
+              {currentUser ? (
+                <button className=" toggle_btn" onClick={logout}>
+                  logout
+                </button>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className=" toggle_btn">login</button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
           {/**************************************** SideBar Ends **********************************************************/}
@@ -127,7 +169,6 @@ function Navbar({ search, setSearch }) {
               </Link>
             </div>
             <div className="right">
-              <p>login</p>{" "}
               <Link to="/favorite">
                 <BsHeart style={style.like} id="favorite" />
               </Link>

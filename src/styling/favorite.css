@@ -38,7 +38,16 @@ favorite
   padding: 2.5rem 0;
   max-width: var(--fixed-width);
 }
-.favorite h2 {
+
+.favorite_empty {
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 2.5rem 0;
+  max-width: var(--fixed-width);
+}
+.favorite h2,
+.favorite_empty h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 3rem;
