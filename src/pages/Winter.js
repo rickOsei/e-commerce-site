@@ -13,6 +13,7 @@ function Winter({ search }) {
   const [more, setMore] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
   const [sorting, setSorting] = useState("recommended");
+  const [productOption, setProductOption] = useState("Category");
   // States
 
   const dispatch = useDispatch();
@@ -30,7 +31,20 @@ function Winter({ search }) {
     }
   });
 
-  const sortedProduct = filteredProduct.sort((a, b) => {
+  const filteredOption = filteredProduct.filter((product) => {
+    if (productOption) {
+      if (productOption === "Category") {
+        return product;
+      }
+      return product.type
+        .toLocaleLowerCase()
+        .includes(productOption.toLocaleLowerCase());
+    } else {
+      return product;
+    }
+  });
+
+  const sortedProduct = filteredOption.sort((a, b) => {
     switch (sorting) {
       case "lowest to highest":
         return a.price - b.price;
@@ -102,30 +116,43 @@ function Winter({ search }) {
         {/****************  Product Section  ***********************/}
         <div className="products_sec">
           <div className="sizes">
-            <h2>Size</h2>
-            <div className="size_btn_sec">
-              <button type="button" className="size_btn">
-                XS
-              </button>
-              <button type="button" className="size_btn">
-                S
-              </button>
-              <button type="button" className="size_btn">
-                M
-              </button>
-              <button type="button" className="size_btn">
-                ML
-              </button>
-              <button type="button" className="size_btn">
-                X
-              </button>
-              <button type="button" className="size_btn">
-                XL
-              </button>
-              <button type="button" className="size_btn">
-                XXL
-              </button>
-            </div>
+            <select
+              name="category"
+              id="category"
+              className="side_options"
+              value={productOption}
+              onChange={(e) => setProductOption(e.target.value)}
+            >
+              <option value="Category">Category</option>
+              <option value="Sweater">Sweater</option>
+              <option value="Jacket">Jacket</option>
+              <option value="Dress">Dress</option>
+            </select>
+
+            <select name="size" id="size" className="side_options">
+              <option value="Size">Size</option>
+              <option value="Extra Small">Extra Small</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Medium Large">Medium Large</option>
+              <option value="Large">Large</option>
+              <option value="Extra Large">Extra Large</option>
+              <option value="Extra-extra Large">Extra-extra Large</option>
+            </select>
+
+            <select name="color" id="color" className="side_options">
+              <option value="Color">Color</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Blue">Blue</option>
+              <option value="White">White</option>
+            </select>
+
+            <select name="material" id="material" className="side_options">
+              <option value="Material">Material</option>
+              <option value="Fabric">Fabric</option>
+              <option value="Cotton">Cotton</option>
+              <option value="Polyester">Polyester</option>
+            </select>
           </div>
           <div
             className={

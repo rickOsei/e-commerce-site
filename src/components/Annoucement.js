@@ -31,6 +31,7 @@ function Annoucement() {
   const logout = async () => {
     try {
       const signout = await signOut(auth);
+      setShowLogin(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -115,7 +116,9 @@ function Annoucement() {
             <>
               <BiLogIn className="auth_icon" />
               <Link to="/login">
-                <p className="auth_btn">Login</p>
+                <p className="auth_btn" onClick={() => setShowLogin(false)}>
+                  Login
+                </p>
               </Link>
             </>
           )}
